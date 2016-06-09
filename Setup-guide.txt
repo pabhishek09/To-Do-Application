@@ -1,0 +1,5 @@
+#Follow these steps to set up the app :
+
+1) Run npm install.
+2) Change .bowerrc file with your credentials and run bower install
+3) Run grunt command, it will be up and running.

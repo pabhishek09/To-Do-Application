@@ -1,0 +1,10 @@
+{
+  "name": "To-Do-App",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "grunt-connect": "latest",
+    "grunt-contrib-jshint": "latest",
+    "jshint-stylish": "latest"
+  }
+}
