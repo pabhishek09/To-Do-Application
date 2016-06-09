@@ -27,7 +27,8 @@ module.exports = function(grunt) {
             files: [
               'bower_components/angular/angular.js',
               'bower_components/angular-mocks/angular-mock.js',
-              'src/test/*.spec.js'
+              'src/test/*.spec.js',
+              'src/test/**/*.spec.js'
             ]
           }
         }
