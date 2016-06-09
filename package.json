@@ -5,6 +5,12 @@
     "grunt": "~0.4.4",
     "grunt-connect": "latest",
     "grunt-contrib-jshint": "latest",
-    "jshint-stylish": "latest"
+    "grunt-karma": "^2.0.0",
+    "jasmine-core": "^2.4.1",
+    "jshint-stylish": "latest",
+    "karma": "^0.13.22",
+    "karma-jasmine": "^1.0.2",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "phantomjs-prebuilt": "^2.1.7"
   }
 }
