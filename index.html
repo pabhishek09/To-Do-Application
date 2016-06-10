@@ -3,14 +3,42 @@
     <head>
         <title>To-Do App!</title>
         <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.css">
+        <link rel="stylesheet" type="text/css" href="src/css/style.css">
         <script src="bower_components/angular/angular.js"></script>
         <script src="bower_components/angular-route/angular-route.js"></script>
-        <script src="src/js/todoAppController.js"></script>
+        <script src="src/js/app.js"></script>
+        <script src="src/js/controllers.js"></script>
+
     </head>
-    <body class="container" >
-        <div class="jumbotron">
-            <h1>Hello, team!</h1>
-            <p ng-bind="title"></p>
-        </div>
+    <body class="container">
+        <nav class="header row">
+            <div class="btn-group" role="group" aria-label="...">
+              <button type="button" href="#/" class="btn navButton">Home</button>
+              <button type="button" href="#today" class="btn navButton">Today</button>
+              <button type="button" href="#all" class="btn navButton">All</button>
+              <button type="button" href="#done" class="btn navButton">Done</button>
+            </div>
+            <!-- <ul class="linkList">
+                <li class="linkList-link">
+                    <a href="#/">Home</a>
+                </li>
+                <li class="linkList-link">
+                    <a class="linkList-link" href="#today">Today</a>
+                </li>
+                <li class="linkList-link">
+                    <a class="linkList-link" href="#all">All</a>
+                </li>
+                <li class="linkList-link">
+                    <a class="linkList-link" href="#done">Done</a>
+                </li>
+            </ul> -->
+            <form class="searchBox">
+                <input class="col-md-offset-8 col-md-3 searchBox-input" placeholder="Enter your search term..." 
+                    type="search" ng-model="searchInput">
+                <i class=" fa fa-search fa-2x" aria-hidden="true"></i>
+            </form>
+        </nav>
+        <div ng-view></div>
     </body>
 </html>

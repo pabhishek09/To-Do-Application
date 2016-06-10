@@ -1,0 +1,27 @@
+.header {
+	background-color: #312c32;
+	padding: 15px;
+	color: #feffff;
+}
+.searchBox-input {
+	background-color: #feffff;
+	color: #312c32;
+	border: none;
+	outline: none;
+	padding: 5px;
+}
+.fa-search{
+	margin-left: 5px;
+}
+.btn-group{
+
+}
+.navButton {
+	background-color: #312c32;
+	padding-right: 30px;
+	padding-left:20px;
+}
+.navButton :hover  {
+	color: #feffff;
+	outline :none;
+}
