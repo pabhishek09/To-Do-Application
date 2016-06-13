@@ -13,13 +13,8 @@
     </head>
     <body class="container">
         <nav class="header row">
-            <div class="btn-group" role="group" aria-label="...">
-              <button type="button" href="#/" class="btn navButton">Home</button>
-              <button type="button" href="#today" class="btn navButton">Today</button>
-              <button type="button" href="#all" class="btn navButton">All</button>
-              <button type="button" href="#done" class="btn navButton">Done</button>
-            </div>
-            <!-- <ul class="linkList">
+            <i class="fa fa-bars visible-sm-block visible-xs-block" aria-hidden="true"></i>
+            <ul class="linkList col-md-8">
                 <li class="linkList-link">
                     <a href="#/">Home</a>
                 </li>
@@ -32,9 +27,9 @@
                 <li class="linkList-link">
                     <a class="linkList-link" href="#done">Done</a>
                 </li>
-            </ul> -->
-            <form class="searchBox">
-                <input class="col-md-offset-8 col-md-3 searchBox-input" placeholder="Enter your search term..." 
+            </ul>
+            <form class="searchBox col-md-4">
+                <input class="searchBox-input pull-right" placeholder="Enter your search term..." 
                     type="search" ng-model="searchInput">
                 <i class=" fa fa-search fa-2x" aria-hidden="true"></i>
             </form>
