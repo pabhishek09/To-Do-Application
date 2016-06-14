@@ -1,6 +1,13 @@
 angular.module('todoApp.controllers',[
-]).controller('todoAppController', ['$scope', 
-	function($scope) {
-		$scope.title = 'Let us make a to-do app!';
+]).controller('homeController', ['$scope', 'categoryList', 'todoFactory',
+	function($scope, categoryList, todoFactory) {
+		$scope.categories = categoryList;
+		$scope.addTodo = function() {
+			todoFactory.addTodo($scope.task);
+		}
 	}
-]);
+])
+.controller('allTodosController', ['$scope', 'todoFactory',
+	function($scope, todoFactory) {
+		$scope.allTodos = todoFactory.getallTodos();
+	}]);

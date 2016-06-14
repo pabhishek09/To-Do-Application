@@ -1,11 +1,14 @@
 angular.module('todoApp',[
 	'ngRoute',
-	'todoApp.controllers'
+	'todoApp.controllers',
+	'todoApp.services',
+	'todoAppConstants'
 ]).config(function($routeProvider) {
 	$routeProvider
 
 	.when('/', {
-		templateUrl: 'src/views/home.html' 
+		templateUrl: 'src/views/home.html',
+		controller: 'homeController'
 	})
 
 	.when('/today', {
@@ -13,7 +16,8 @@ angular.module('todoApp',[
 	})
 
 	.when('/all', {
-		templateUrl: 'src/views/all.html'
+		templateUrl: 'src/views/all.html',
+		controller: 'allTodosController'
 	})
 
 	.when('/done', {

@@ -5,10 +5,8 @@
 }
 .searchBox-input {
 	background-color: transparent;
-	color: #312c32;
-	border: 1px solid #fff;
+	border: 2px solid #fff;
 	border-radius: 6px;
-	width: 80%;
 	outline: none;
 	padding: 5px;
 }
@@ -16,9 +14,6 @@
 	position: absolute;
     right: 20px;
     top: 1px;
-}
-.btn-group{
-
 }
 .linkList {
 	list-style-type: none;
@@ -33,7 +28,17 @@
 	text-decoration: none;
 	color: #fff;
 	font-size: 15px;
+	padding: 5px;
 }
 .linkList li a:hover {
 	border-bottom: 2px solid #fff;
 }
+.view {
+	margin-top: 20px;
+	color: #312c32;
+}
+
+.to-do .input-group {
+	margin-bottom : 20px;
+}
+
