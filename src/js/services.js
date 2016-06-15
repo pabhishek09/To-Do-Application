@@ -1,5 +1,5 @@
 angular.module('todoApp.services', [
-]).service('todoFactory',[function() {
+]).service('todoService',[function() {
 	var sessionTodoList = new Array();
 		if (localStorage['todoList']) {
 			var previousTodos = JSON.parse(localStorage['todoList']);

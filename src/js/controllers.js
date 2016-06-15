@@ -1,13 +1,18 @@
 angular.module('todoApp.controllers',[
-]).controller('homeController', ['$scope', 'categoryList', 'todoFactory',
-	function($scope, categoryList, todoFactory) {
-		$scope.categories = categoryList;
+]).controller('homeController', ['$scope', 'categoryList', 'todoService',
+	function($scope, categoryList, todoService) {
+		$scope.categories = categoryList,
+			dateNow = new Date();
 		$scope.addTodo = function() {
-			todoFactory.addTodo($scope.task);
+			todoService.addTodo($scope.task);
+		}
+		$scope.showCalender = function() {
+			$scope.popup1.opened = true;
 		}
 	}
 ])
-.controller('allTodosController', ['$scope', 'todoFactory',
-	function($scope, todoFactory) {
-		$scope.allTodos = todoFactory.getallTodos();
-	}]);
+.controller('allTodosController', ['$scope', 'todoService',
+	function($scope, todoService) {
+		$scope.allTodos = todoService.getallTodos();
+	}
+]);

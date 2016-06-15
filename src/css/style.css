@@ -9,6 +9,7 @@
 	border-radius: 6px;
 	outline: none;
 	padding: 5px;
+	width: 80%;
 }
 .fa-search{
 	position: absolute;
@@ -41,4 +42,22 @@
 .to-do .input-group {
 	margin-bottom : 20px;
 }
-
+.btn-info.active,
+.btn-info.active:hover {
+ 	background-color: #312c32;
+    border-color: #312c32;
+}
+.btn-info.active .text-info {
+ 	color: #fff;
+}
+.uib-datepicker-popup.dropdown-menu {
+	padding: 0;
+	outline: none;
+}
+.display-inline-block {
+	display: inline-block;
+}
+.add-list-btn {
+	text-align: center;
+	margin: 20px;
+}

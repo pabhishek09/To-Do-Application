@@ -1,7 +1,9 @@
 angular.module('todoApp',[
 	'ngRoute',
+	'ui.bootstrap',
 	'todoApp.controllers',
 	'todoApp.services',
+	'todoApp.directives',
 	'todoAppConstants'
 ]).config(function($routeProvider) {
 	$routeProvider
