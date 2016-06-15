@@ -14,7 +14,8 @@ angular.module('todoApp',[
 	})
 
 	.when('/today', {
-		templateUrl: 'src/views/today.html'
+		templateUrl: 'src/views/today.html',
+		controller: 'todayTodosController'
 	})
 
 	.when('/all', {

@@ -18,6 +18,18 @@ module.exports = function(grunt) {
         }
       },
 
+      includeSource: ({
+          options: {
+              basePath: 'src',
+              baseUrl: 'src/'
+          },
+          dev: {
+              files: {
+                  'index.html' : 'index.html'
+              }
+          }
+      }),
+
       karma: {  
         unit: {
           options: {
@@ -38,8 +50,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-connect');  
+  grunt.loadNpmTasks('grunt-include-source');
 
-  grunt.registerTask('default', ['jshint', 'connect']);
-  grunt.registerTask('test', [  'jshint','karma']);
+  grunt.registerTask('default', ['jshint', 'includeSource', 'connect']);
+  grunt.registerTask('test', ['jshint','karma']);
 
 };

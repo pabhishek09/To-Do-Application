@@ -5,6 +5,7 @@
     "grunt": "~0.4.4",
     "grunt-connect": "latest",
     "grunt-contrib-jshint": "latest",
+    "grunt-include-source": "^1.0.0",
     "grunt-karma": "^2.0.0",
     "jasmine-core": "^2.4.1",
     "jshint-stylish": "latest",

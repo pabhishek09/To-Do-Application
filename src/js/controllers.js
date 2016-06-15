@@ -16,4 +16,9 @@ angular.module('todoApp.controllers',[
 	function($scope, todoService) {
 		$scope.allTodos = todoService.getallTodos();
 	}
+])
+.controller('todayTodosController', ['$scope', 'todoService',
+	function($scope, todoService) {
+		todoService.getTodaysTodos();
+	}
 ]);
