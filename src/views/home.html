@@ -14,16 +14,17 @@
             <div ng-init="task.category = 'Select a category'" class="display-inline-block">
                 <button type="button" class="btn btn-default btn-md dropdown-toggle" data-toggle="dropdown" 
                 aria-haspopup="true" aria-expanded="false">{{task.category}}
+                    <i class={{task.icon}} aria-hidden="true"></i></a>
                   <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
                     <li class="text-center" ng-repeat = "category in categories">
-                        <a href="" ng-click="task.category = category.name">{{category.name}}
+                        <a href="" ng-click="task.category = category.name;task.icon = category.icon">{{category.name}}
                         <i class={{category.icon}} aria-hidden="true"></i></a>
                     </li>
                 </ul>
             </div>
-            <date-picker date-value="dateNow"></date-picker>
+            <date-picker date-value="dateValue"></date-picker>
         </div>
     </div>
     <div class="add-list-btn">
@@ -33,4 +34,3 @@
         </button>
     </div>
 </div>
-

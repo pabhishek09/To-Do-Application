@@ -3,18 +3,14 @@ angular.module('todoApp.directives',[
 	return {
         restrict: 'E',
         scope: {
-        	dateValue: '&'
+        	dateValue: '='
         },
         templateUrl: 'src/views/datepicker.html',
         controller: ['$scope', function ($scope) {
     		$scope.today = function() {
-    			$scope.dt = new Date();
+    			$scope.dateValue = new Date();
   			};
  			$scope.today();
-
-  			$scope.clear = function() {
-    			$scope.dt = null;
-  			};
 
   			$scope.inlineOptions = {
     			customClass: getDayClass,
@@ -50,7 +46,7 @@ angular.module('todoApp.directives',[
   			};
 
   			$scope.setDate = function(year, month, day) {
-    			$scope.dt = new Date(year, month, day);
+    			$scope.dateValue = new Date(year, month, day);
   			};
 
 

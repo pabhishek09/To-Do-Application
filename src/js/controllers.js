@@ -2,8 +2,9 @@ angular.module('todoApp.controllers',[
 ]).controller('homeController', ['$scope', 'categoryList', 'todoService',
 	function($scope, categoryList, todoService) {
 		$scope.categories = categoryList,
-			dateNow = new Date();
+			$scope.dateValue = new Date();
 		$scope.addTodo = function() {
+			$scope.task.date = $scope.dateValue;
 			todoService.addTodo($scope.task);
 		}
 		$scope.showCalender = function() {

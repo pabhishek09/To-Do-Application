@@ -1,4 +1,10 @@
 <div>
-	<h1>All</h1>
-	<p ng-repeat = "todo in allTodos track by $index" ng-bind="todo.description"></p>
+	<h1>All Tasks</h1>
+    <ul class="list-group">
+		<li ng-repeat = "todo in allTodos track by $index" class="list-group-item">
+			 {{todo.description}}, {{todo.category}}
+			<i class={{todo.icon}} aria-hidden="true"></i></a>
+			<strong> on {{todo.date | date}}</strong>
+		</li> 
+	</ul>
 </div>

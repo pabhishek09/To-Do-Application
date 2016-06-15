@@ -17,4 +17,8 @@ angular.module('todoApp.services', [
 	this.getallTodos = function () {
 		return sessionTodoList;
 	}
+
+	this.getTodaysTodos = function() {
+		var todaysTodos = [];
+	}
 }]);
