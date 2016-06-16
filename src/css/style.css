@@ -61,3 +61,14 @@
 	text-align: center;
 	margin: 20px;
 }
+.btn-todo-options {
+	width: 185px;
+}
+.btn-add-todo {
+	width: 185px;
+	background-color: #312c32;
+	color: #feffff;
+}
+.list-group {
+	text-align: center;
+}

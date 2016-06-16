@@ -12,9 +12,9 @@
     <div class="row">
         <div class="btn-group col-md-offset-4 col-md-8" role="group" aria-label="...">
             <div ng-init="task.category = 'Select a category'" class="display-inline-block">
-                <button type="button" class="btn btn-default btn-md dropdown-toggle" data-toggle="dropdown" 
+                <button type="button" class="btn btn-default btn-todo-options dropdown-toggle" data-toggle="dropdown" 
                 aria-haspopup="true" aria-expanded="false">{{task.category}}
-                    <i class={{task.icon}} aria-hidden="true"></i></a>
+                    <i class={{task.icon}} aria-hidden="true"></i>
                   <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
@@ -28,7 +28,7 @@
         </div>
     </div>
     <div class="add-list-btn">
-        <button type="button" class="btn btn-default btn-md" ng-click="addTodo()">
+        <button type="button" class="btn btn-default btn-add-todo" ng-click="addTodo()">
             Add to list
             <i class=" fa fa-plus-square" aria-hidden="true"></i>
         </button>
