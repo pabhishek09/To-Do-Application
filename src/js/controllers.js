@@ -19,6 +19,6 @@ angular.module('todoApp.controllers',[
 ])
 .controller('todayTodosController', ['$scope', 'todoService',
 	function($scope, todoService) {
-		todoService.getTodaysTodos();
+		$scope.todayTodos = todoService.getTodaysTodos();
 	}
 ]);

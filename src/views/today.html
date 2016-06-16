@@ -1,3 +1,10 @@
 <div>
-	<h1>today</h1>
+	<h1>Today's tasks</h1>
+    <ul class="list-group">
+		<li ng-repeat = "todo in todayTodos track by $index" class="list-group-item">
+			 {{todo.description}}, {{todo.category}}
+			<i class={{todo.icon}} aria-hidden="true"></i></a>
+			<strong> on {{todo.date | date}}</strong>
+		</li> 
+	</ul>
 </div>

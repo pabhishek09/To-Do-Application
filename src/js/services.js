@@ -1,5 +1,5 @@
 angular.module('todoApp.services', [
-]).service('todoService',[function() {
+]).service('todoService',['$filter', function($filter) {
 	var sessionTodoList = new Array();
 		if (localStorage['todoList']) {
 			var previousTodos = JSON.parse(localStorage['todoList']);
@@ -21,7 +21,10 @@ angular.module('todoApp.services', [
 	this.getTodaysTodos = function() {
 		var todaysTodos = [];
 		angular.forEach(sessionTodoList, function(todo) {
-			console.log(todo);
+			if ($filter('date')(todo.date, "dd/MM/yyyy") === $filter('date')(new Date(), "dd/MM/yyyy")) {
+				todaysTodos.push(todo);
+			}
 		});
+		return todaysTodos;
 	}
 }]);
