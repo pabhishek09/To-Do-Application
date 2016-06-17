@@ -5,22 +5,36 @@ describe('todoservices', function(){
 		$rootScope,
 		$filter,
 		todo = {
-			description: 'buy milk',
-			category: 'grocery'
-		};
+				description: 'buy milk',
+				category: 'grocery'
+			},
+		sessionTodoList = [
+			{
+				description: 'buy milk',
+				category: 'grocery'
+			}];
 
 	beforeEach(function() {
 		module('todoApp.services');
 
-		inject(function(_todoService_, _$filter_) {
+		inject(function(_todoService_) {
 			todoService = _todoService_;
-			$filter = _$filter_;
 		})
 	});
 
-	it('should add todos', function() {
+	it('should return all the added todos', function() {
 		todoService.addTodo(todo);
-		expect(sessionTodoList.length).toBe(1);
+		expect(todoService.getallTodos()).toEqual(sessionTodoList);
+	});
+
+	it ('should return todays todos correctly', function(){
+		var newTodo = {
+			description: 'buy milk',
+			category: 'grocery',
+			date: new Date()
+		};
+		todoService.addTodo(newTodo);
+		expect(todoService.getTodaysTodos()).toContain(newTodo);
 	});
 
 });
