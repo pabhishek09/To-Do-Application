@@ -26,4 +26,20 @@ angular.module('todoApp.services', [
 		});
 		return todaysTodos;
 	}
+	this.getDoneTodos = function() {
+		var doneTodos = [],
+			changed;
+		angular.forEach(sessionTodoList, function(todo) {
+			if (todo.done) {
+				changed = true;
+				doneTodos.push(todo);
+			}
+		});
+
+		if(changed) {
+			console.log('**');
+			localStorage.setItem('todoList', JSON.stringify(sessionTodoList));
+		}
+		return doneTodos;
+	}
 }]);

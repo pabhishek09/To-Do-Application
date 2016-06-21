@@ -24,6 +24,7 @@ angular.module('todoApp',[
 	})
 
 	.when('/done', {
-		templateUrl: 'src/views/done.html'
+		templateUrl: 'src/views/done.html',
+		controller: 'doneTodosController'
 	});
 });

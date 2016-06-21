@@ -4,7 +4,11 @@ angular.module('todoApp.controllers',[
 		$scope.categories = categoryList,
 			$scope.dateValue = new Date();
 		$scope.addTodo = function() {
-			var todo = {category: $scope.task.category, description: $scope.task.description, date: $scope.dateValue};
+			if ($scope.task.category === 'Select a category') {
+				$scope.task.category = 'Others';
+				$scope.task.icon = 'fa fa-reorder';
+			}
+			var todo = {category: $scope.task.category, icon: $scope.task.icon, description: $scope.task.description, date: $scope.dateValue, done: ''};
 			todoService.addTodo(todo);
 		}
 		$scope.showCalender = function() {
@@ -20,5 +24,10 @@ angular.module('todoApp.controllers',[
 .controller('todayTodosController', ['$scope', 'todoService',
 	function($scope, todoService) {
 		$scope.todayTodos = todoService.getTodaysTodos();
+	}
+])
+.controller('doneTodosController', ['$scope', 'todoService',
+	function($scope, todoService) {
+		$scope.doneTodos = todoService.getDoneTodos();
 	}
 ]);
