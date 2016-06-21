@@ -4,8 +4,8 @@ angular.module('todoApp.controllers',[
 		$scope.categories = categoryList,
 			$scope.dateValue = new Date();
 		$scope.addTodo = function() {
-			$scope.task.date = $scope.dateValue;
-			todoService.addTodo($scope.task);
+			var todo = {category: $scope.task.category, description: $scope.task.description, date: $scope.dateValue};
+			todoService.addTodo(todo);
 		}
 		$scope.showCalender = function() {
 			$scope.popup1.opened = true;

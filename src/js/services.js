@@ -10,7 +10,6 @@ angular.module('todoApp.services', [
 
 	this.addTodo = function(task) {
 		sessionTodoList.push(task);
-		localStorage.removeItem('todoList');
 		localStorage.setItem('todoList', JSON.stringify(sessionTodoList));
 	}
 
