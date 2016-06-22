@@ -24,13 +24,9 @@
     </head>
     <body class="container">
         <nav class="header row">
-            <i class="fa fa-bars visible-sm-block visible-xs-block" aria-hidden="true"></i>
             <ul class="linkList col-md-8">
                 <li class="linkList-link">
                     <a href="#/"><i class=" fa fa-home" aria-hidden="true"></i>To-Do App</a>
-                </li>
-                <li class="linkList-link">
-                    <a class="linkList-link" href="#today"><i class=" fa fa-calendar-check-o" aria-hidden="true"></i>Today</a>
                 </li>
                 <li class="linkList-link">
                     <a class="linkList-link" href="#all"><i class=" fa fa-tasks" aria-hidden="true"></i>All</a>
@@ -39,11 +35,6 @@
                     <a class="linkList-link" href="#done"><i class=" fa fa-check-square-o" aria-hidden="true"></i>Done</a>
                 </li>
             </ul>
-            <form class="searchBox col-md-4">
-                <input class="searchBox-input pull-right" placeholder="Enter your search term..." 
-                    type="search" ng-model="searchInput">
-                <i class=" fa fa-search fa-2x" aria-hidden="true"></i>
-            </form>
         </nav>
         <div ng-view></div>
     </body>
