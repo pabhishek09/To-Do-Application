@@ -12,7 +12,7 @@ angular.module('todoApp.services', [
 		sessionTodoList.push(task);
 		updatelocalStorage();
 	}
-	
+
 	this.clearDoneList = function() {
 		angular.forEach(sessionTodoList, function(todo) {
 			if (todo.done) {
@@ -59,7 +59,7 @@ angular.module('todoApp.services', [
 		return doneTodos;
 	}
 
-	this.updatelocalStorage = function() {
+	updatelocalStorage = function() {
 		localStorage.setItem('todoList', JSON.stringify(sessionTodoList));
 	}
 }]);
