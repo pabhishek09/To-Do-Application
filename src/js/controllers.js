@@ -1,6 +1,6 @@
 angular.module('todoApp.controllers',[
-]).controller('homeController', ['$scope', 'categoryList', 'todoService',
-	function($scope, categoryList, todoService) {
+]).controller('homeController', ['$scope', 'categoryList', 'todoService', '$timeout',
+	function($scope, categoryList, todoService, $timeout) {
 		$scope.categories = categoryList,
 			$scope.todayTodos = todoService.getTodaysTodos(),
 			$scope.dateValue = new Date();
@@ -12,7 +12,11 @@ angular.module('todoApp.controllers',[
 			var todo = {category: $scope.task.category, icon: $scope.task.icon, description: $scope.task.description, date: $scope.dateValue, done: ''};
 			todoService.addTodo(todo);
 			$scope.todayTodos = todoService.getTodaysTodos();
-			$scope.task.category === 'Select a category';
+			$scope.task.category = 'Select a category';
+			$scope.addMessage = 'todo added!';
+			$timeout(function() {
+				$scope.addMessage = '';
+			}, 2000);
 		}
 		$scope.showCalender = function() {
 			$scope.popup1.opened = true;
@@ -23,12 +27,16 @@ angular.module('todoApp.controllers',[
 		}
 	}
 ])
-.controller('allTodosController', ['$scope', 'todoService',
-	function($scope, todoService) {
+.controller('allTodosController', ['$scope', 'todoService', '$timeout',
+	function($scope, todoService, $timeout) {
 		$scope.allTodos = todoService.getallTodos();
 		$scope.clearTodoList = function() {
 			todoService.clearTodoList();
 			$scope.allTodos = todoService.getallTodos();
+			$scope.clearMessage = 'todo-list cleaned!';
+			$timeout(function() {
+				$scope.clearMessage = '';
+			}, 2000);
 		}
 		$scope.updateValue = function(todo) {
 			todoService.updateTodo(todo);

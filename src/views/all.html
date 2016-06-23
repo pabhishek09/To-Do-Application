@@ -1,31 +1,34 @@
 <div class="row">
-	<div ng-if="allTodos.length" class="col-md-offset-2 col-md-8 todo-panel">
+	<div class="col-md-offset-2 col-md-8 todo-panel">
 		<div class="header-panel">
-				<h4 class="text-center">All to-do's
-					<span class="searchBox">
-					<i class=" fa fa-search fa-2x" aria-hidden="true"></i>
-		            <input class="searchBox-input" placeholder="Search for todo.." 
-		                type="search" ng-model="searchInput">
-		            </span>
-		        </h4>
+			<div class="row">
+				<h4 class="text-center col-md-offset-3 col-md-5">All to-do's
+						<span class="searchBox" ng-if="allTodos.length">
+						<i class=" fa fa-search fa-2x" aria-hidden="true"></i>
+			            <input class="searchBox-input" placeholder="Search for todo.." 
+			                type="search" ng-model="searchInput">
+			            </span>
+			    </h4>
+			    <h4 ng-if="clearMessage" class="col-md-4">
+            		<i class="fa fa-trash-o" aria-hidden="true"></i>
+            		{{clearMessage}}
+        		</h4>
+			</div>
 		</div>
-	    <ul class="list-group">
-			<li ng-repeat = "todo in allTodos | filter:searchInput" class="list-group-item" ng-class="{strike: todo.done}">
-				<input type="checkbox" ng-model="todo.done" ng-change="updateValue(todo)"/>
-				{{todo.description}}, {{todo.category}}
-				<i class={{todo.icon}} aria-hidden="true"></i>
-				<strong> on {{todo.date | date}}</strong>
-			</li> 
-		</ul>
-		<button type="button" class="btn btn-default btn-add-todo" ng-click="clearTodoList()">
-	        Clear list
-	        <i class=" fa fa fa-times" aria-hidden="true"></i>
-	    </button>
-	</div>
-	<div ng-if="!allTodos.length" class="col-md-offset-2 col-md-8 todo-panel">
-		<div class="header-panel">
-			<h4>All to-do's</h4>
-		</div>
-		<p class="blank-message">No todo's are added. Head to the home-page and add some to-do's!</p>
+		<div ng-if="allTodos.length">
+		    <ul class="list-group">
+				<li ng-repeat = "todo in allTodos | filter:searchInput" class="list-group-item" ng-class="{strike: todo.done}">
+					<input type="checkbox" ng-model="todo.done" ng-change="updateValue(todo)"/>
+					{{todo.description}}, {{todo.category}}
+					<i class={{todo.icon}} aria-hidden="true"></i>
+					<strong> on {{todo.date | date}}</strong>
+				</li> 
+			</ul>
+			<button type="button" class="btn btn-default btn-add-todo" ng-click="clearTodoList()">
+		        Clear list
+		        <i class=" fa fa fa-times" aria-hidden="true"></i>
+		    </button>
+	    </div>
+		<p ng-if="!allTodos.length" class="blank-message">No todo's are added. Head to the home-page and add some to-do's!</p>
 	</div>
 </div>

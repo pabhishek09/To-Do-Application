@@ -1,10 +1,16 @@
 <div class="row">
     <div class="col-md-offset-2 col-md-8 todo-panel">
         <div class="header-panel">
-            <h4 class="text-center">
-                <i class=" fa fa-hashtag" aria-hidden="true"></i>
-                Add a new to-do!
-            </h4>
+            <div class="row">
+                <h4 class="text-center col-md-offset-4 col-md-4">
+                    <i class="fa fa-hashtag" aria-hidden="true"></i>
+                    Add a new to-do!
+                </h4>
+                <h4 ng-if="addMessage" class="col-md-4">
+                    <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                    {{addMessage}}
+                </h4>
+            </div>
         </div>
         <form>
             <div class="input-group input-group-lg">
@@ -37,34 +43,30 @@
             </div>
         </form>
     </div>
-    <div ng-if="todayTodos.length" class="col-md-offset-3 col-md-6 todo-panel">
+    <div class="col-md-offset-3 col-md-6 todo-panel">
         <div class="header-panel">
             <h4 class="text-center">Today's to-do's</h4>
         </div>
-        <ul class="list-group">
-            <li ng-repeat = "todo in todayTodos track by $index" class="list-group-item" ng-class="{strike: todo.done}">
-                <input type="checkbox" ng-model="todo.done" ng-change="updateValue(todo)"/>
-                {{todo.description}}, {{todo.category}}
-                <i class={{todo.icon}} aria-hidden="true"></i>
-                <strong> on {{todo.date | date}}</strong>
-            </li> 
-        </ul>
-        <div class="text-center today-btn-group">
-            <button type="button" class="btn btn-default btn-add-todo" ng-click="clearTodoList()">
-                Clear list
-                <i class=" fa fa fa-times" aria-hidden="true"></i>
-            </button>
-            <button type="button" class="btn btn-default btn-add-todo" ng-click="clearDoneList()">
-                Clear Done list
-                <i class=" fa fa fa-times" aria-hidden="true"></i>
-            </button>
+        <div ng-if="todayTodos.length">
+            <ul class="list-group">
+                <li ng-repeat = "todo in todayTodos track by $index" class="list-group-item" ng-class="{strike: todo.done}">
+                    <input type="checkbox" ng-model="todo.done" ng-change="updateValue(todo)"/>
+                    {{todo.description}}, {{todo.category}}
+                    <i class={{todo.icon}} aria-hidden="true"></i>
+                    <strong> on {{todo.date | date}}</strong>
+                </li> 
+            </ul>
+            <div class="text-center today-btn-group">
+                <button type="button" class="btn btn-default btn-add-todo" ng-click="clearTodoList()">
+                    Clear list
+                    <i class=" fa fa fa-times" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="btn btn-default btn-add-todo" ng-click="clearDoneList()">
+                    Clear Done list
+                    <i class=" fa fa fa-times" aria-hidden="true"></i>
+                </button>
+            </div>
         </div>
-    </div>
-    <div ng-if="!todayTodos.length" class="col-md-offset-2 col-md-8 todo-panel">
-        <div class="header-panel">
-            <h4>Today's to-do's</h4>
-        </div>
-        <p class="blank-message">No todo's for today. Looks like a lazy ahead!</p>
+        <p ng-if="!todayTodos.length" class="blank-message">No todo's for today. Looks like a lazy day ahead!</p>
     </div>
 </div>
-

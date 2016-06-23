@@ -1,24 +1,21 @@
 <div class="row">
-	<div ng-if="doneTodos.length" class="col-md-offset-2 col-md-8 todo-panel">
+	<div class="col-md-offset-2 col-md-8 todo-panel">
 		<div class="header-panel">
 			<h4 class="text-center">Done to-do's</h4>
 		</div>
-		<ul class="list-group">
-			<li ng-repeat = "todo in doneTodos track by $index" class="list-group-item">
-				{{todo.description}}, {{todo.category}}
-				<i class={{todo.icon}} aria-hidden="true"></i>
-				<strong> on {{todo.date | date}}</strong>
-			</li>
-		</ul>
-		<button type="button" class="btn btn-default btn-add-todo" ng-click="clearDoneList()">
-	        Clear Done list
-	        <i class=" fa fa fa-times" aria-hidden="true"></i>
-	    </button>
-	</div>
-	<div ng-if="!doneTodos.length" class="col-md-offset-2 col-md-8 todo-panel">
-		<div class="header-panel">
-			<h4>Done to-do's</h4>
-		</div>
-		<p class="blank-message">No todo's are done. Nothing to display!</p>
+		<div ng-if="doneTodos.length">
+			<ul class="list-group">
+				<li ng-repeat = "todo in doneTodos track by $index" class="list-group-item">
+					{{todo.description}}, {{todo.category}}
+					<i class={{todo.icon}} aria-hidden="true"></i>
+					<strong> on {{todo.date | date}}</strong>
+				</li>
+			</ul>
+			<button type="button" class="btn btn-default btn-add-todo" ng-click="clearDoneList()">
+		        Clear Done list
+		        <i class=" fa fa fa-times" aria-hidden="true"></i>
+		    </button>
+	    </div>
+	    <p ng-if="!doneTodos.length" class="blank-message">No todo's are done. Nothing to display!</p>
 	</div>
 </div>
