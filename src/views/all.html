@@ -11,7 +11,7 @@
 		</div>
 	    <ul class="list-group">
 			<li ng-repeat = "todo in allTodos | filter:searchInput" class="list-group-item" ng-class="{strike: todo.done}">
-				<input type="checkbox" ng-model="todo.done"/>
+				<input type="checkbox" ng-model="todo.done" ng-change="updateValue(todo)"/>
 				{{todo.description}}, {{todo.category}}
 				<i class={{todo.icon}} aria-hidden="true"></i>
 				<strong> on {{todo.date | date}}</strong>

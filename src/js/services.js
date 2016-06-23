@@ -32,6 +32,10 @@ angular.module('todoApp.services', [
 		return sessionTodoList;
 	}
 
+	this.updateTodo = function(todo) {
+		updatelocalStorage();
+	}
+
 	this.getTodaysTodos = function() {
 		var todaysTodos = [];
 		angular.forEach(sessionTodoList, function(todo) {
@@ -43,19 +47,12 @@ angular.module('todoApp.services', [
 	}
 
 	this.getDoneTodos = function() {
-		var doneTodos = [],
-			changed;
+		var doneTodos = [];
 		angular.forEach(sessionTodoList, function(todo) {
 			if (todo.done) {
-				changed = true;
 				doneTodos.push(todo);
 			}
 		});
-
-		if(changed) {
-			console.log('**');
-			localStorage.setItem('todoList', JSON.stringify(sessionTodoList));
-		}
 		return doneTodos;
 	}
 
