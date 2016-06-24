@@ -13,18 +13,19 @@ angular.module('todoApp.controllers',[
 			todoService.addTodo(todo);
 			$scope.todayTodos = todoService.getTodaysTodos();
 			$scope.task.category = 'Select a category';
+			$scope.dateValue = new Date();
 			$scope.addMessage = 'todo added!';
 			$timeout(function() {
 				$scope.addMessage = '';
 			}, 2000);
-		}
+		};
 		$scope.showCalender = function() {
 			$scope.popup1.opened = true;
-		}
+		};
 		$scope.updateValue = function(todo) {
 			todoService.updateTodo(todo);
 			$scope.todayTodos = todoService.getTodaysTodos();
-		}
+		};
 	}
 ])
 .controller('allTodosController', ['$scope', 'todoService', '$timeout',
@@ -37,11 +38,11 @@ angular.module('todoApp.controllers',[
 			$timeout(function() {
 				$scope.clearMessage = '';
 			}, 2000);
-		}
+		};
 		$scope.updateValue = function(todo) {
 			todoService.updateTodo(todo);
 			$scope.allTodos = todoService.getallTodos();
-		}
+		};
 	}
 ])
 .controller('doneTodosController', ['$scope', 'todoService',
@@ -50,6 +51,6 @@ angular.module('todoApp.controllers',[
 		$scope.clearDoneList = function() {
 			todoService.clearDoneList();
 			$scope.doneTodos = todoService.getDoneTodos();
-		}
+		};
 	}
 ]);

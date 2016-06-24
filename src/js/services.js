@@ -1,9 +1,9 @@
 angular.module('todoApp.services', [
 ]).service('todoService',['$filter', function($filter) {
-	var sessionTodoList = new Array();
-		if (localStorage['todoList']) {
-			var previousTodos = JSON.parse(localStorage['todoList']);
-		for (todo in previousTodos) {
+	var sessionTodoList = [];
+		if (localStorage.getItem('todoList')) {
+			var previousTodos = JSON.parse(localStorage.getItem('todoList'));
+		for (var todo in previousTodos) {
 			sessionTodoList.push(previousTodos[todo]);
 		}
 	}
@@ -11,7 +11,7 @@ angular.module('todoApp.services', [
 	this.addTodo = function(task) {
 		sessionTodoList.push(task);
 		updatelocalStorage();
-	}
+	};
 
 	this.clearDoneList = function() {
 		angular.forEach(sessionTodoList, function(todo) {
@@ -20,21 +20,21 @@ angular.module('todoApp.services', [
 			}
 		});
 		updatelocalStorage();
-	}
+	};
 
 	this.clearTodoList = function() {
 		localStorage.removeItem('todoList');
-		sessionTodoList = new Array();
+		sessionTodoList = [];
 		updatelocalStorage();
-	}
+	};
 
 	this.getallTodos = function () {
 		return sessionTodoList;
-	}
+	};
 
 	this.updateTodo = function(todo) {
 		updatelocalStorage();
-	}
+	};
 
 	this.getTodaysTodos = function() {
 		var todaysTodos = [];
@@ -44,7 +44,7 @@ angular.module('todoApp.services', [
 			}
 		});
 		return todaysTodos;
-	}
+	};
 
 	this.getDoneTodos = function() {
 		var doneTodos = [];
@@ -54,9 +54,9 @@ angular.module('todoApp.services', [
 			}
 		});
 		return doneTodos;
-	}
+	};
 
 	updatelocalStorage = function() {
 		localStorage.setItem('todoList', JSON.stringify(sessionTodoList));
-	}
+	};
 }]);

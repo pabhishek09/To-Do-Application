@@ -9,7 +9,7 @@ module.exports = function(grunt) {
       options: {
         reporter: require('jshint-stylish') 
       },
-      build: ['Grunfile.js', 'js/**/*.js']
+      build: ['Grunfile.js', 'src/js/*.js']
       },
 
       connect: {
@@ -56,7 +56,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-connect');  
   grunt.loadNpmTasks('grunt-include-source');
 
-  grunt.registerTask('default', ['jshint', 'includeSource', 'connect']);
+  grunt.registerTask('default', ['includeSource', 'connect']);
   grunt.registerTask('test', ['jshint','karma']);
 
 };

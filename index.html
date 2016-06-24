@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html ng-app="todoApp">
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="src/css/favicon.ico" rel="icon" type="image/x-icon" />
         <title>To-Do App!</title>
         <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.css">
         <link rel="stylesheet" type="text/css" href="src/css/style.css">
+        <base href="/">
         <script src="bower_components/angular/angular.js"></script>
         <script src="bower_components/angular-route/angular-route.js"></script>
         <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -21,19 +23,18 @@
         <script src="src/js/controllers.js"></script>
         <script src="src/js/directives.js"></script>
         <script src="src/js/services.js"></script>
-
     </head>
-    <body class="container">
-        <nav class="header row">
-            <ul class="linkList col-md-8">
+    <body>
+        <nav class="row">
+            <ul class="linkList col-xs-12 col-md-offset-1 col-md-10">
                 <li class="linkList-link">
-                    <a href="#/"><i class=" fa fa-home" aria-hidden="true"></i>To-Do App</a>
+                    <a href="/"><i class=" fa fa-home" aria-hidden="true"></i>To-Do App</a>
                 </li>
                 <li class="linkList-link">
-                    <a class="linkList-link" href="#all"><i class=" fa fa-tasks" aria-hidden="true"></i>All</a>
+                    <a class="linkList-link" href="all"><i class=" fa fa-tasks" aria-hidden="true"></i>All</a>
                 </li>
                 <li class="linkList-link">
-                    <a class="linkList-link" href="#done"><i class=" fa fa-check-square-o" aria-hidden="true"></i>Done</a>
+                    <a class="linkList-link" href="done"><i class=" fa fa-check-square-o" aria-hidden="true"></i>Done</a>
                 </li>
             </ul>
         </nav>

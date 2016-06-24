@@ -5,26 +5,29 @@ angular.module('todoApp',[
 	'todoApp.services',
 	'todoApp.directives',
 	'todoAppConstants'
-]).config(function($routeProvider) {
-	$routeProvider
+]).config(['$routeProvider', '$locationProvider',
+	function($routeProvider, $locationProvider) {
+		$locationProvider.html5Mode(true);
+		$routeProvider
 
-	.when('/', {
-		templateUrl: 'src/views/home.html',
-		controller: 'homeController'
-	})
+		.when('/', {
+			templateUrl: 'src/views/home.html',
+			controller: 'homeController'
+		})
 
-	.when('/today', {
-		templateUrl: 'src/views/today.html',
-		controller: 'todayTodosController'
-	})
+		.when('/today', {
+			templateUrl: 'src/views/today.html',
+			controller: 'todayTodosController'
+		})
 
-	.when('/all', {
-		templateUrl: 'src/views/all.html',
-		controller: 'allTodosController'
-	})
+		.when('/all', {
+			templateUrl: 'src/views/all.html',
+			controller: 'allTodosController'
+		})
 
-	.when('/done', {
-		templateUrl: 'src/views/done.html',
-		controller: 'doneTodosController'
-	});
-});
+		.when('/done', {
+			templateUrl: 'src/views/done.html',
+			controller: 'doneTodosController'
+		});
+	}
+]);
