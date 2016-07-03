@@ -14,11 +14,13 @@ angular.module('todoApp.services', [
 	};
 
 	this.clearDoneList = function() {
+		var todos = [];
 		angular.forEach(sessionTodoList, function(todo) {
-			if (todo.done) {
-				
+			if (!todo.done) {
+				todos.push(todo);
 			}
 		});
+		sessionTodoList = todos;
 		updatelocalStorage();
 	};
 

@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-xs-offset-2 col-xs-8 col-md-offset-2 col-md-8 todo-panel">
+    <div class="col-xs-offset-1 col-xs-10 col-md-offset-2 col-md-8 todo-panel">
         <div class="header-panel">
             <div class="row">
                 <p class="col-xs-offset-1 col-xs-6 col-md-offset-4 col-md-4">
@@ -11,7 +11,7 @@
                 </p>
             </div>
         </div>
-        <form onsubmit="addTodo()">
+        <form ng-submit="addTodo()">
             <div class="input-group">
                 <input type="text" class="form-control" placeholder="Type the task" 
                     aria-describedby="basic-addon1" ng-model="task.description">
@@ -35,14 +35,14 @@
                 </div>
             </div>
             <div class="add-list-btn">
-                <button type="submit" class="btn btn-default btn-add-todo" ng-click="addTodo()">
+                <button type="submit" class="btn btn-default btn-add-todo" ng-submit="addTodo()">
                     Add to list
                     <i class=" fa fa-plus-square" aria-hidden="true"></i>
                 </button>
             </div>
         </form>
     </div>
-    <div class="col-xs-offset-2 col-xs-8 col-md-offset-3 col-md-6 todo-panel">
+    <div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6 todo-panel">
         <div class="header-panel">
             <p class="text-center">Today's to-do's</p>
         </div>
@@ -55,16 +55,6 @@
                     <strong> on {{todo.date | date}}</strong>
                 </li> 
             </ul>
-            <div class="text-center today-btn-group">
-                <button type="button" class="btn btn-default btn-add-todo" ng-click="clearTodoList()">
-                    Clear list
-                    <i class=" fa fa fa-times" aria-hidden="true"></i>
-                </button>
-                <button type="button" class="btn btn-default btn-add-todo" ng-click="clearDoneList()">
-                    Clear Done list
-                    <i class=" fa fa fa-times" aria-hidden="true"></i>
-                </button>
-            </div>
         </div>
         <p ng-if="!todayTodos.length" class="blank-message">No todo's for today. Looks like a lazy day ahead!</p>
     </div>

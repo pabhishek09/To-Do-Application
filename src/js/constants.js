@@ -1,12 +1,16 @@
 angular.module('todoAppConstants',[
 ]).constant('categoryList',{
 	"grocery": {
-		"name": "Grocery items",
+		"name": "Shopping erands",
 		"icon": "fa fa-shopping-cart"
 	},
 	"travel": {
 		"name": "Travel and bookings",
 		"icon": "fa fa-plane"
+	},
+	"payments": {
+		"name": "Payments and dues",
+		"icon": "fa fa-credit-card-alt"
 	},
 	"healthcare": {
 		"name": "Healthcare",

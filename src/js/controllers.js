@@ -18,6 +18,7 @@ angular.module('todoApp.controllers',[
 			$timeout(function() {
 				$scope.addMessage = '';
 			}, 2000);
+			$scope.task.description = '';
 		};
 		$scope.showCalender = function() {
 			$scope.popup1.opened = true;
@@ -45,12 +46,16 @@ angular.module('todoApp.controllers',[
 		};
 	}
 ])
-.controller('doneTodosController', ['$scope', 'todoService',
-	function($scope, todoService) {
+.controller('doneTodosController', ['$scope', 'todoService', '$timeout',
+	function($scope, todoService, $timeout) {
 		$scope.doneTodos = todoService.getDoneTodos();
 		$scope.clearDoneList = function() {
 			todoService.clearDoneList();
 			$scope.doneTodos = todoService.getDoneTodos();
+			$scope.clearDoneMessage = 'done todos cleared!';
+			$timeout(function() {
+				$scope.clearDoneMessage = '';
+			}, 2000);
 		};
 	}
 ]);

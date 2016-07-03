@@ -13,6 +13,7 @@ body {
 	color: #feffff;
 	list-style-type: none;
 	font-weight: bolder;
+	margin-bottom: 0;
 }
 .linkList li {
 	display: inline;
