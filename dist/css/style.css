@@ -1,0 +1,96 @@
+@font-face {
+  font-family: 'ToDoFont';
+  src: url('Esphimere.otf') format('truetype');    
+}
+body {
+	font-family: 'ToDoFont', sans-serif;
+	letter-spacing: 1px;
+	font-size: 16px;
+}
+.linkList {
+	background-color: #312c32;
+	padding: 15px;
+	color: #feffff;
+	list-style-type: none;
+	font-weight: bolder;
+	margin-bottom: 0;
+}
+.linkList li {
+	display: inline;
+	padding-left: 20px;
+}
+.linkList li a {
+	text-decoration: none;
+	color: #fff;
+	font-size: 15px;
+	padding: 5px;
+}
+.linkList li a:hover {
+	border-bottom: 2px solid #fff;
+}
+.todo-panel {
+	border-style: ridge;
+	border-width: 2px;
+	border-color: #312c32;
+	border-radius: 2px;
+	padding-left:0;
+	padding-right:0;
+	margin-top:30px;
+	text-align: center;
+	padding-bottom: 20px;
+}
+.header-panel {
+	background-color: #312c32;
+	padding: 5px;
+	color: #feffff;
+	font-weight: bold;
+}
+.header-panel p {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.input-group {
+	margin-top:25px;
+	margin-bottom : 25px;
+	width:100%;
+	padding-left:20%;
+	padding-right:20%;
+}
+.btn-info.active,
+.btn-info.active:hover {
+ 	background-color: #312c32;
+    border-color: #312c32;
+}
+.btn-info.active .text-info {
+ 	color: #fff;
+}
+.uib-datepicker-popup.dropdown-menu {
+	padding: 0;
+	outline: none;
+}
+.display-inline-block {
+	display: inline-block;
+}
+.add-list-btn {
+	text-align: center;
+	margin: 20px;
+}
+.btn-todo-options {
+	width: 185px;
+}
+.btn-add-todo {
+	width: 185px;
+	background-color: #312c32;
+	color: #feffff;
+}
+.list-group {
+	text-align: center;
+	padding-top:2px;
+}
+.strike{
+	text-decoration: line-through ;
+	opacity:0.7;
+}
+.blank-message{
+	margin-top:15px;
+}
