@@ -5,7 +5,7 @@ angular.module('todoApp.directives',[
         scope: {
         	dateValue: '='
         },
-        templateUrl: 'src/views/datepicker.html',
+        templateUrl: 'views/datepicker.html',
         controller: ['$scope', function ($scope) {
     		$scope.today = function() {
     			$scope.dateValue = new Date();
@@ -71,7 +71,7 @@ angular.module('todoApp.directives',[
     			}
 
     			return '';
-  			}       
+  			}
         }]
     };
 });

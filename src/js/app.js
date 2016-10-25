@@ -11,17 +11,17 @@ angular.module('todoApp',[
 		$routeProvider
 
 		.when('/', {
-			templateUrl: 'src/views/home.html',
+			templateUrl: 'views/home.html',
 			controller: 'homeController'
 		})
 
 		.when('/all', {
-			templateUrl: 'src/views/all.html',
+			templateUrl: 'views/all.html',
 			controller: 'allTodosController'
 		})
 
 		.when('/done', {
-			templateUrl: 'src/views/done.html',
+			templateUrl: 'views/done.html',
 			controller: 'doneTodosController'
 		});
 	}

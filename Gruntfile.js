@@ -7,56 +7,54 @@ module.exports = function(grunt) {
 
       jshint: {
       options: {
-        reporter: require('jshint-stylish') 
+        reporter: require('jshint-stylish')
       },
-      build: ['Grunfile.js', 'src/js/*.js']
+      build: ['Grunfile.js', 'dist/js/*.js']
       },
 
       connect: {
         dev: {
-          port: 9000
+          port: 9000,
+          base: 'dist'
         }
       },
 
-      includeSource: ({
-          options: {
-              basePath: 'src',
-              baseUrl: 'src/'
-          },
-          dev: {
-              files: {
-                  'index.html' : 'index.html'
-              }
-          }
-      }),
-
-      karma: {  
+      karma: {
         unit: {
           options: {
             frameworks: ['jasmine'],
             singleRun: true,
             browsers: ['PhantomJS'],
             files: [
-              'bower_components/angular/angular.js',
-              'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
-              'bower_components/angular-mocks/angular-mocks.js',
-              'bower_components/angular-route/angular-route.js',
-              'bower_components/jquery/dist/jquery.js',
-              'bower_components/bootstrap/dist/js/bootstrap.js',
-              'src/js/*.js',
-              'src/test/*.spec.js'
+              'dist/bower_components/angular/angular.js',
+              'dist/bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+              'dist/bower_components/angular-mocks/angular-mocks.js',
+              'dist/bower_components/angular-route/angular-route.js',
+              'dist/bower_components/jquery/dist/jquery.js',
+              'dist/bower_components/bootstrap/dist/js/bootstrap.js',
+              'dist/js/*.js',
+              'dist/test/*.spec.js'
             ]
           }
         }
-      }
+      },
+
+    copy: {
+      main: {
+        expand: true,
+        cwd: 'src',
+        src: '**',
+        dest: 'dist/',
+      },
+    }
+
   });
 
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-connect');  
-  grunt.loadNpmTasks('grunt-include-source');
+  grunt.loadNpmTasks('grunt-connect');
 
-  grunt.registerTask('default', ['includeSource', 'connect']);
+  grunt.registerTask('default', ['copy', 'connect']);
   grunt.registerTask('test', ['jshint','karma']);
-
 };
