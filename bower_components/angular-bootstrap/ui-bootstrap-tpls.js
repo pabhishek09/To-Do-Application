@@ -1332,7 +1332,7 @@ angular.module('ui.bootstrap.datepicker', ['ui.bootstrap.dateparser', 'ui.bootst
   minMode: 'day',
   ngModelOptions: {},
   shortcutPropagation: false,
-  showWeeks: true,
+  showWeeks: false,
   yearColumns: 5,
   yearRows: 4
 })
@@ -2575,7 +2575,7 @@ angular.module('ui.bootstrap.datepickerPopup', ['ui.bootstrap.datepicker', 'ui.b
     'month': 'yyyy-MM'
   },
   onOpenFocus: true,
-  showButtonBar: true,
+  showButtonBar: false,
   placement: 'auto bottom-left'
 })
 
