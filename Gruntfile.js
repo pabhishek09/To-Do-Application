@@ -46,7 +46,21 @@ module.exports = function(grunt) {
         src: '**',
         dest: 'dist/',
       },
+    },
+
+    uglify: {
+      dev: {
+        files: {
+          'dist/js/main.min.js': ['src/js/app.js', 'src/js/controllers.js', 'src/js/services.js', 'src/js/directives.js', 'src/js/constants.js']
+        }
+      },
+      tpls: {
+        files: {
+          'dist/js/bootstrap-tpls.min.js': ['dist/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js']
+        }
+      }
     }
+
 
   });
 
@@ -54,7 +68,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-connect');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
 
   grunt.registerTask('default', ['copy', 'connect']);
+  grunt.registerTask('prod', ['copy', 'uglify', 'connect']);
+
   grunt.registerTask('test', ['jshint','karma']);
 };

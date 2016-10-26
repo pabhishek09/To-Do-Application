@@ -6,6 +6,7 @@
     "grunt-connect": "latest",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-jshint": "latest",
+    "grunt-contrib-uglify": "^2.0.0",
     "grunt-karma": "^2.0.0",
     "jasmine-core": "^2.4.1",
     "jshint-stylish": "latest",
